@@ -11,7 +11,7 @@ LABEL version="1.0"
 LABEL name="hello-docker"
 
 # bir adet env variable tanımlıyoruz. Daha sonra bunu runtime'da değiştireceğiz
-ENV KULLANICI="Dunyali"
+ENV KULLANICI="Marsli"
 
 # nginx debian-slim imajı baz alınarak oluşturulmuştur.
 # bu imajda geriye doğru uyumluluk sorunları var ve o nedenle update olmuyor. 
