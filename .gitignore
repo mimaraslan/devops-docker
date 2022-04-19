@@ -118,6 +118,5 @@ testem.log
 Thumbs.db
 
 # Angular
-/node_modules
 /dist
 package-lock.json
