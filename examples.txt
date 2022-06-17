@@ -1,0 +1,97 @@
+https://hub.docker.com/settings/security
+docker login -u YOUR_USERNAME
+
+docker container run --name ilkcontainer ozgurozturknet/app1
+
+docker container run -p 80:80 ozgurozturknet/adanzyedocker
+docker container ls
+docker container logs CONTAINER_ID
+
+
+// containera isim verdik
+docker container run --name denemecon ozgurozturknet/adanzyedocker java app1
+docker container ls -a
+docker container stop
+
+//Detached mode, shown by the option --detach or -d
+docker container run -d -p 80:80 ozgurozturknet/adanzyedocker
+docker container ls
+
+docker container rm -f CONTAINER_ID1 CONTAINER_ID2  CONTAINER_ID3
+
+
+docker container run --name websunucu -p 80:80 -d ozgurozturknet/adanzyedocker
+docker container ls
+
+docker container exec -it websunucu sh
+docker container ls -a
+pwd 
+ls -l
+java app1
+
+cd /usr/local/apache2/htdocs
+ls
+echo "bunu ben ekledim" >> index.html
+ps 
+exit 
+docker ps
+docker container exec -it websunucu sh
+docker container ls -a
+docker start websunucu
+docker ps 
+docker stop websunucu
+
+docker container run --name websunucu2 -p 80:80 -d ozgurozturknet/adanzyedocker
+docker container ls
+
+// Tum containerlari siler 
+docker container prune 
+
+docker images ls
+docker images prune -a 
+
+docker image pull alpine 
+docker image pull ozgurozturknet/hello-app 
+docker container ls
+
+VOLUME 
+docker volume create ilkvolume
+docker volume inspect ilkvolume 
+docker container run -it -v ilkvolume:/uygulama alpine sh 
+ls 
+cd /uygulama 
+touch abc.txt 
+ls 
+echo "my messagge 1" >> abc.txt 
+cat abc.txt 
+exit 
+docker ps -a 
+docker container rm 5c178bb91d99 
+docker ps -a 
+docker volume ls 
+
+docker container run -it  -v ilkvolume:/deneme alpine sh
+ls
+cd /deneme 
+ls 
+cat abc.txt 
+touch abc2.txt 
+echo "my messagge 2" >> abc2.txt 
+exit
+
+docker conatiner run -it -v ilkvolume:/deneme2 centos sh
+ls 
+cd deneme2 
+ls 
+touch abc3.txt 
+echo "my messagge 3" >> abc3.txt
+cat abc3.txt 
+
+READ ONLY (ro)
+docker container run -it -v ilkvolume:/deneme3:ro centos sh
+cd deneme3 
+ls 
+touch abc4.txt
+HATA OLACAK: touch: cannot touch 'abc4.txt': Read-only file system
+
+
