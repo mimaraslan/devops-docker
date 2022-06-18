@@ -1,1 +1,1 @@
-echo "Hello World! Merhaba Dunya"
+echo "Hello world, DevOps."
